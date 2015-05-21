@@ -30,6 +30,13 @@ public interface Attribute
     public Attribute getType();
 
     /**
+     * 获取类型字符串(用于保存进NBT的字符串)
+     *
+     * @return
+     */
+    public String getTypeString();
+
+    /**
      * 获取操作方式
      *
      * @return
@@ -37,8 +44,7 @@ public interface Attribute
     public int getOperation();
 
     /**
-     * 设置操作方式
-     * 增加数值(0)/乘以百分比(1)/增加百分比(2)
+     * 设置操作方式 增加数值(0)/乘以百分比(1)/增加百分比(2)
      *
      * @param operation
      */

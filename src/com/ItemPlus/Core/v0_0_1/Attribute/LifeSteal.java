@@ -36,6 +36,11 @@ public class LifeSteal implements Attribute
         return this;
     }
 
+    public String getTypeString()
+    {
+        return "itemPlus.lifeSteal";
+    }
+
     public int getOperation()
     {
         return this.operation;
