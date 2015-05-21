@@ -5,8 +5,8 @@
 
 ###开发者资源
 * [JavaDoc](http://tribeserver.github.io/ItemPlus)
-###开发任务
+开发任务
 * 完成部分API功能
 * 完成所有API注释
-###将来功能
+将来功能
 * 实现自定义图片
