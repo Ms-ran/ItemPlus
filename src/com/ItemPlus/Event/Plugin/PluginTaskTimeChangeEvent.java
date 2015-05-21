@@ -5,6 +5,8 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.plugin.Plugin;
 
 /**
+ * 执行器时间改变事件
+ *
  * @author HotFlow
  */
 public class PluginTaskTimeChangeEvent extends PluginEvent implements Cancellable
@@ -23,7 +25,7 @@ public class PluginTaskTimeChangeEvent extends PluginEvent implements Cancellabl
     /**
      * 获取延时执行器
      *
-     * @return
+     * @return Task
      */
     public Task getTask()
     {
@@ -31,9 +33,9 @@ public class PluginTaskTimeChangeEvent extends PluginEvent implements Cancellabl
     }
 
     /**
-     * 获取服务器时间
+     * 获取执行器时间
      *
-     * @return
+     * @return long
      */
     public long getTime()
     {

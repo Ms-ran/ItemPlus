@@ -4,6 +4,8 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.plugin.Plugin;
 
 /**
+ * 插件启动事件
+ *
  * @author HotFlow
  */
 public class PluginEnableEvent extends PluginEvent implements Cancellable
@@ -14,7 +16,7 @@ public class PluginEnableEvent extends PluginEvent implements Cancellable
     {
         super(plugin);
     }
-    
+
     @Override
     public boolean isCancelled()
     {

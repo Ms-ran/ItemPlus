@@ -3,6 +3,8 @@ package com.ItemPlus.Core.v0_0_1.Manager;
 import java.util.logging.Logger;
 
 /**
+ * Logger管理器
+ *
  * @author HotFlow
  */
 public final class LoggerManager
@@ -12,7 +14,7 @@ public final class LoggerManager
     /**
      * 获取Logger
      *
-     * @return
+     * @return Logger
      */
     public Logger getLogger()
     {
@@ -23,7 +25,7 @@ public final class LoggerManager
      * 获取Logger
      *
      * @param name
-     * @return
+     * @return Logger
      */
     public Logger getLogger(String name)
     {
@@ -35,7 +37,7 @@ public final class LoggerManager
      *
      * @param name
      * @param resourceBundleName
-     * @return
+     * @return Logger
      */
     public Logger getLogger(String name, String resourceBundleName)
     {

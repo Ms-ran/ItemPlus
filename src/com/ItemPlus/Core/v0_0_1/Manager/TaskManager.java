@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 执行器管理器
+ *
  * @author HotFlow
  */
 public class TaskManager
@@ -14,7 +16,7 @@ public class TaskManager
     /**
      * 获取执行器列表
      *
-     * @return
+     * @return List<Task>
      */
     public List<Task> getTasks()
     {

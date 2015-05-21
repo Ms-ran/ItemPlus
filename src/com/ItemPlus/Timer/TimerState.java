@@ -1,9 +1,11 @@
 package com.ItemPlus.Timer;
 
 /**
+ * 计时器状态
+ *
  * @author HotFlow
  */
-public enum TaskState
+public enum TimerState
 {
     //运行中
     Running,

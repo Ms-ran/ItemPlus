@@ -3,6 +3,8 @@ package com.ItemPlus.Event.Plugin;
 import org.bukkit.plugin.Plugin;
 
 /**
+ * 插件关闭事件
+ *
  * @author HotFlow
  */
 public class PluginDisableEvent extends PluginEvent
@@ -12,5 +14,5 @@ public class PluginDisableEvent extends PluginEvent
     {
         super(plugin);
     }
-    
+
 }

@@ -5,6 +5,8 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.Plugin;
 
 /**
+ * 插件事件
+ *
  * @author HotFlow
  */
 public class PluginEvent extends Event
@@ -20,7 +22,7 @@ public class PluginEvent extends Event
     /**
      * 获取插件
      *
-     * @return
+     * @return Plugin
      */
     public Plugin getPlugin()
     {
@@ -30,7 +32,7 @@ public class PluginEvent extends Event
     /**
      * 获取处理者
      *
-     * @return
+     * @return HandlerList
      */
     public HandlerList getHandlers()
     {
@@ -40,7 +42,7 @@ public class PluginEvent extends Event
     /**
      * 获取处理者列表
      *
-     * @return
+     * @return HandlerList
      */
     public static HandlerList getHandlerList()
     {

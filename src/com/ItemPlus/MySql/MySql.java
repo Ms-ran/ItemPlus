@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * 直接面向MySql的操作，以后更改为HashMap读写
+ * MySql支持类 直接面向MySql的操作，以后更改为HashMap读写
  *
  * @author HotFlow
  */
@@ -70,7 +70,8 @@ public class MySql
     /**
      * 是否拥有schema
      *
-     * @return @throws SQLException
+     * @return Boolean
+     * @throws SQLException
      */
     public Boolean hasSchema() throws SQLException
     {
@@ -107,7 +108,7 @@ public class MySql
     /**
      * 是否拥有table
      *
-     * @return
+     * @return Boolean
      * @throws java.sql.SQLException
      */
     public Boolean hasTable() throws SQLException
@@ -132,7 +133,7 @@ public class MySql
     /**
      * 获取数据库
      *
-     * @return
+     * @return String
      */
     public String getSchema()
     {
@@ -142,7 +143,7 @@ public class MySql
     /**
      * 获取表格
      *
-     * @return
+     * @return String
      */
     public String getTable()
     {
@@ -152,7 +153,7 @@ public class MySql
     /**
      * 是否连接
      *
-     * @return
+     * @return Boolean
      * @throws SQLException
      */
     public Boolean isConnected() throws SQLException
@@ -177,7 +178,7 @@ public class MySql
      * 创建数据库
      *
      * @param name
-     * @return
+     * @return Boolean
      * @throws SQLException
      */
     public synchronized Boolean createSchema(String name) throws SQLException
@@ -191,10 +192,10 @@ public class MySql
      *
      * @param table
      * @param slots
-     * @return
+     * @return Boolean
      * @throws java.sql.SQLException
      */
-    public synchronized Boolean createTable(String table, MySqlSlot[] slots) throws SQLException
+    public synchronized Boolean createTable(String table, MySqlColumn[] slots) throws SQLException
     {
         if (this.isConnected())
         {
@@ -204,7 +205,7 @@ public class MySql
 
                 for (int i = 0; i < slots.length; i++)
                 {
-                    MySqlSlot slot = slots[i];
+                    MySqlColumn slot = slots[i];
                     sb.append(slot.flag);
                     if (i < slots.length - 1)
                     {
@@ -224,7 +225,7 @@ public class MySql
      * 执行命令
      *
      * @param statement
-     * @return
+     * @return ResultSet
      * @throws java.sql.SQLException
      */
     public synchronized ResultSet executeQuery(String statement) throws SQLException
@@ -242,7 +243,7 @@ public class MySql
      * 执行命令
      *
      * @param statement
-     * @return
+     * @return Boolean
      * @throws java.sql.SQLException
      */
     public synchronized Boolean execute(String statement) throws SQLException
@@ -260,7 +261,7 @@ public class MySql
      * 执行命令
      *
      * @param statement
-     * @return
+     * @return int
      * @throws SQLException
      */
     public synchronized int executeUpdate(String statement) throws SQLException
@@ -278,7 +279,7 @@ public class MySql
      * 添加数据
      *
      * @param map
-     * @return
+     * @return Boolean
      * @throws SQLException
      */
     public synchronized Boolean insert(HashMap<String, String> map) throws SQLException
@@ -320,7 +321,7 @@ public class MySql
      * @param condition
      * @param key
      * @param value
-     * @return
+     * @return int
      * @throws java.sql.SQLException
      */
     public synchronized int update(String condition, String key, String value) throws SQLException
@@ -342,7 +343,7 @@ public class MySql
      *
      * @param key
      * @param value
-     * @return
+     * @return int
      * @throws SQLException
      */
     public synchronized int delete(String key, String value) throws SQLException
@@ -364,7 +365,7 @@ public class MySql
      *
      * @param condition
      * @param key
-     * @return
+     * @return List<Object>
      * @throws SQLException
      */
     public synchronized List<Object> getValuesOfKey(String condition, String key) throws SQLException
@@ -395,7 +396,7 @@ public class MySql
      *
      * @param condition
      * @param key
-     * @return
+     * @return List<Integer>
      * @throws SQLException
      */
     public synchronized List<Integer> getIntegersOfKey(String condition, String key) throws SQLException
@@ -414,7 +415,7 @@ public class MySql
      *
      * @param condition
      * @param key
-     * @return
+     * @return List<String>
      * @throws SQLException
      */
     public synchronized List<String> getStringsOfKey(String condition, String key) throws SQLException
@@ -432,7 +433,7 @@ public class MySql
      * 键是否存在
      *
      * @param key
-     * @return
+     * @return Boolean
      * @throws java.sql.SQLException
      */
     public synchronized Boolean isKeyExist(String key) throws SQLException
@@ -460,7 +461,7 @@ public class MySql
     /**
      * 获取现有键
      *
-     * @return
+     * @return List<String>
      * @throws SQLException
      */
     public synchronized List<String> getKeys() throws SQLException
@@ -490,7 +491,7 @@ public class MySql
      *
      * @param key
      * @param value
-     * @return 0为否
+     * @return Boolean
      * @throws SQLException
      */
     public synchronized Boolean isKeyHasValue(String key, String value) throws SQLException
@@ -502,7 +503,7 @@ public class MySql
      * 获取键信息
      *
      * @param key
-     * @return
+     * @return ResultSet
      */
     public synchronized ResultSet getKeyInfo(String key) throws SQLException
     {

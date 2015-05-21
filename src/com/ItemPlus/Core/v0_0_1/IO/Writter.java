@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
+ * 配置文本写出
+ *
  * @author HotFlow
  */
 public final class Writter

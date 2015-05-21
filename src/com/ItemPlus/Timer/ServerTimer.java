@@ -1,26 +1,28 @@
 package com.ItemPlus.Timer;
 
-import com.ItemPlus.Core.ServerRunnable;
+import com.ItemPlus.Core.TimerRunnable;
 import com.ItemPlus.Main;
 
 /**
+ * 服务器计时器
+ *
  * @author HotFlow
  */
 public final class ServerTimer
 {
-    private final ServerRunnable task;
+    private final TimerRunnable task;
     private long time;
 
     public ServerTimer()
     {
-        this.task = new ServerRunnable(Main.plugin, this);
+        this.task = new TimerRunnable(Main.plugin, this);
         this.time = 0L;
     }
 
     /**
      * 获取游戏时间
      *
-     * @return
+     * @return long
      */
     public long getTime()
     {
@@ -40,9 +42,9 @@ public final class ServerTimer
     /**
      * 获取时间执行器
      *
-     * @return
+     * @return ServerRunnable
      */
-    public ServerRunnable getTimerTask()
+    public TimerRunnable getTimerRunnable()
     {
         return this.task;
     }

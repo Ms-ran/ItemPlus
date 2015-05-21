@@ -22,6 +22,8 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.representer.Representer;
 
 /**
+ * YamlConfiguration的中文修复版，允许支持中文
+ *
  * @author HotFlow
  */
 public class ItemConfiguration extends YamlConfiguration

@@ -7,28 +7,30 @@ import com.ItemPlus.Main;
 import com.ItemPlus.Timer.ServerTimer;
 import com.ItemPlus.Timer.Task.Task;
 import com.ItemPlus.Timer.Task.TimerTask;
-import com.ItemPlus.Timer.TaskState;
+import com.ItemPlus.Timer.TimerState;
 import static org.bukkit.Bukkit.getServer;
 import org.bukkit.plugin.Plugin;
 
 /**
+ * 时间运行器
+ *
  * @author HotFlow
  */
-public final class ServerRunnable
+public final class TimerRunnable
 {
     private final int taskID;
-    private TaskState taskState;
+    private TimerState taskState;
 
-    public ServerRunnable(final Plugin plugin, final ServerTimer timer)
+    public TimerRunnable(final Plugin plugin, final ServerTimer timer)
     {
-        this.taskState = TaskState.Suspending;
+        this.taskState = TimerState.Suspending;
 
         int taskID = getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable()
         {
             @Override
             public void run()
             {
-                if (taskState.equals(TaskState.Running))
+                if (taskState.equals(TimerState.Running))
                 {
                     PluginTimeChangeEvent event = new PluginTimeChangeEvent(plugin, timer.getTime() + 1);
                     getServer().getPluginManager().callEvent(event);
@@ -91,7 +93,7 @@ public final class ServerRunnable
      */
     public void start()
     {
-        this.taskState = TaskState.Running;
+        this.taskState = TimerState.Running;
     }
 
     /**
@@ -99,7 +101,7 @@ public final class ServerRunnable
      */
     public void suspend()
     {
-        this.taskState = TaskState.Suspending;
+        this.taskState = TimerState.Suspending;
     }
 
     /**
@@ -113,9 +115,9 @@ public final class ServerRunnable
     /**
      * 获取执行器当前状态
      *
-     * @return
+     * @return TaskState
      */
-    public TaskState getCurrentState()
+    public TimerState getCurrentState()
     {
         return this.taskState;
     }
@@ -123,7 +125,7 @@ public final class ServerRunnable
     /**
      * 获取时间执行器ID
      *
-     * @return
+     * @return Integer
      */
     public int getTaskID()
     {

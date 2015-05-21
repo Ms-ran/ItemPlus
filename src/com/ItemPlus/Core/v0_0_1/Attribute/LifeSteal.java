@@ -4,6 +4,8 @@ import com.ItemPlus.Attribute.Attribute;
 import java.util.UUID;
 
 /**
+ * 吸血属性
+ *
  * @author HotFlow
  */
 public class LifeSteal implements Attribute

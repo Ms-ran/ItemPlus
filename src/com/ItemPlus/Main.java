@@ -21,25 +21,25 @@ public class Main extends JavaPlugin
     {
         PluginEnableEvent event = new PluginEnableEvent(this);
         getServer().getPluginManager().callEvent(event);
-        
-        if(event.isCancelled())
+
+        if (event.isCancelled())
         {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
     }
-    
+
     @Override
     public void onDisable()
     {
         PluginDisableEvent event = new PluginDisableEvent(this);
         getServer().getPluginManager().callEvent(event);
     }
-    
+
     /**
      * 获取执行器管理器
      *
-     * @return
+     * @return TaskManager
      */
     public static TaskManager getTaskManager()
     {

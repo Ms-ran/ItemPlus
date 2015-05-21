@@ -1,9 +1,11 @@
 package com.ItemPlus.MySql;
 
 /**
+ * MySql列规则
+ *
  * @author HotFlow
  */
-public enum MySqlSlotRule
+public enum MySqlColumnRule
 {
     PrimaryKey("Primary Key"),
     NotNull("Not Null"),
@@ -12,10 +14,10 @@ public enum MySqlSlotRule
     Unsigned("Unsigned"),
     ZeroFill("Zero Fill"),
     AutoIncrement("Auto Increment");
-    
+
     public String name;
-    
-    private MySqlSlotRule(String name)
+
+    private MySqlColumnRule(String name)
     {
         this.name = name;
     }

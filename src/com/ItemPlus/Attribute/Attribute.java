@@ -4,6 +4,8 @@ import java.util.UUID;
 import javax.annotation.Nonnull;
 
 /**
+ * 属性接口
+ *
  * @author HotFlow
  */
 public interface Attribute
@@ -11,7 +13,7 @@ public interface Attribute
     /**
      * 获取名字
      *
-     * @return
+     * @return String
      */
     public String getName();
 
@@ -25,21 +27,21 @@ public interface Attribute
     /**
      * 获取类型
      *
-     * @return
+     * @return Attribute
      */
     public Attribute getType();
 
     /**
      * 获取类型字符串(用于保存进NBT的字符串)
      *
-     * @return
+     * @return String
      */
     public String getTypeString();
 
     /**
      * 获取操作方式
      *
-     * @return
+     * @return Integer
      */
     public int getOperation();
 
@@ -53,7 +55,7 @@ public interface Attribute
     /**
      * 获取数据
      *
-     * @return
+     * @return Object
      */
     public Object getAmount();
 
@@ -67,7 +69,7 @@ public interface Attribute
     /**
      * 获取UUID
      *
-     * @return
+     * @return UUID
      */
     public UUID getUUID();
 

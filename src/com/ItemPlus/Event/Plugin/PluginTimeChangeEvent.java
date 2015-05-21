@@ -4,6 +4,8 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.plugin.Plugin;
 
 /**
+ * 服务器时间改变事件
+ *
  * @author HotFlow
  */
 public class PluginTimeChangeEvent extends PluginEvent implements Cancellable
@@ -20,7 +22,7 @@ public class PluginTimeChangeEvent extends PluginEvent implements Cancellable
     /**
      * 获取时间
      *
-     * @return
+     * @return long
      */
     public long getTime()
     {
@@ -32,7 +34,7 @@ public class PluginTimeChangeEvent extends PluginEvent implements Cancellable
      *
      * @param time
      */
-    public void setTime(int time)
+    public void setTime(long time)
     {
         this.time = time;
     }

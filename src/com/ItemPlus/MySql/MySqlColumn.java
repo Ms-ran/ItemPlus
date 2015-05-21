@@ -1,19 +1,21 @@
 package com.ItemPlus.MySql;
 
 /**
+ * MySql列
+ *
  * @author HotFlow
  */
-public class MySqlSlot
+public class MySqlColumn
 {
     public final String flag;
 
-    public MySqlSlot(String type, MySqlSlotRule[] rules, String name)
+    public MySqlColumn(String type, MySqlColumnRule[] rules, String name)
     {
         StringBuilder sb = new StringBuilder();
 
         sb.append(name).append(" ").append(type).append(" ");
 
-        for (MySqlSlotRule r : rules)
+        for (MySqlColumnRule r : rules)
         {
             sb.append(r.name).append(" ");
         }

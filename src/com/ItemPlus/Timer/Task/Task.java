@@ -1,6 +1,8 @@
 package com.ItemPlus.Timer.Task;
 
 /**
+ * 执行器接口
+ *
  * @author HotFlow
  */
 public interface Task
@@ -10,7 +12,7 @@ public interface Task
     /**
      * 获取时间
      *
-     * @return
+     * @return long
      */
     public long getTime();
 
@@ -24,7 +26,7 @@ public interface Task
     /**
      * 获取介绍
      *
-     * @return
+     * @return String
      */
     public String getDescription();
 

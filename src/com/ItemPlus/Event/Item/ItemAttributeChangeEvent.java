@@ -5,6 +5,8 @@ import com.ItemPlus.Item.ItemStack;
 import org.bukkit.event.Cancellable;
 
 /**
+ * 物品属性变动事件
+ *
  * @author HotFlow
  */
 public class ItemAttributeChangeEvent extends ItemEvent implements Cancellable
@@ -21,7 +23,7 @@ public class ItemAttributeChangeEvent extends ItemEvent implements Cancellable
     /**
      * 获取属性
      *
-     * @return
+     * @return Attribute
      */
     public Attribute getAttribute()
     {

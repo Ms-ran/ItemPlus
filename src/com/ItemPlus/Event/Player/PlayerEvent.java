@@ -5,6 +5,8 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 /**
+ * 玩家事件
+ *
  * @author HotFlow
  */
 public class PlayerEvent extends Event
@@ -20,7 +22,7 @@ public class PlayerEvent extends Event
     /**
      * 获取玩家
      *
-     * @return
+     * @return Player
      */
     public Player getPlayer()
     {
@@ -30,7 +32,7 @@ public class PlayerEvent extends Event
     /**
      * 获取处理者
      *
-     * @return
+     * @return HandlerList
      */
     public HandlerList getHandlers()
     {
@@ -40,7 +42,7 @@ public class PlayerEvent extends Event
     /**
      * 获取处理者列表
      *
-     * @return
+     * @return HandlerList
      */
     public static HandlerList getHandlerList()
     {
