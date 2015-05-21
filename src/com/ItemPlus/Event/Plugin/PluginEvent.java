@@ -14,6 +14,10 @@ public class PluginEvent extends Event
     private static final HandlerList handlers = new HandlerList();
     private final Plugin plugin;
 
+    /**
+     * 构造插件事件
+     * @param plugin 插件 
+     */
     public PluginEvent(Plugin plugin)
     {
         this.plugin = plugin;

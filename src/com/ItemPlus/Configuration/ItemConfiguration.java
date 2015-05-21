@@ -32,6 +32,9 @@ public class ItemConfiguration extends YamlConfiguration
     private final Representer yamlRepresenter = new YamlRepresenter();
     private final Yaml yaml = new Yaml(new YamlConstructor(), this.yamlRepresenter, this.yamlOptions);
 
+    /**
+     * 构造ItemConfiguratin
+     */
     public ItemConfiguration()
     {
         super();
@@ -64,7 +67,7 @@ public class ItemConfiguration extends YamlConfiguration
     /**
      * 保存config
      *
-     * @param file 文件路径
+     * @param file 文件
      * @throws IOException
      */
     @Override
@@ -76,7 +79,7 @@ public class ItemConfiguration extends YamlConfiguration
     /**
      * 载入
      *
-     * @param file
+     * @param file 文件
      * @throws java.io.FileNotFoundException
      * @throws org.bukkit.configuration.InvalidConfigurationException
      */
@@ -89,7 +92,7 @@ public class ItemConfiguration extends YamlConfiguration
     /**
      * 载入
      *
-     * @param stream
+     * @param stream 读入内容
      * @throws IOException
      * @throws InvalidConfigurationException
      */
@@ -121,7 +124,7 @@ public class ItemConfiguration extends YamlConfiguration
     /**
      * 载入 config
      *
-     * @param file
+     * @param file 文件
      * @throws FileNotFoundException
      * @throws IOException
      * @throws InvalidConfigurationException
@@ -135,7 +138,7 @@ public class ItemConfiguration extends YamlConfiguration
     /**
      * 修复1.7.10不能为中文
      *
-     * @param contents
+     * @param contents 内容
      * @throws org.bukkit.configuration.InvalidConfigurationException
      */
     @Override
@@ -193,7 +196,7 @@ public class ItemConfiguration extends YamlConfiguration
     /**
      * 创建父文件夹
      *
-     * @param file
+     * @param file 文件
      * @throws IOException
      */
     private void createParentDirs(File file) throws IOException

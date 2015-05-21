@@ -15,6 +15,12 @@ public class PluginTaskFireEvent extends PluginEvent implements Cancellable
     private final long time;
     private Boolean cancelled = false;
 
+    /**
+     * 构造执行器触发事件
+     * @param plugin 插件
+     * @param task 执行器
+     * @param time 时间
+     */
     public PluginTaskFireEvent(Plugin plugin, Task task, long time)
     {
         super(plugin);

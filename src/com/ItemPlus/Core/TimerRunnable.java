@@ -6,6 +6,7 @@ import com.ItemPlus.Event.Plugin.PluginTimeChangeEvent;
 import com.ItemPlus.Main;
 import com.ItemPlus.Timer.ServerTimer;
 import com.ItemPlus.Timer.Task.Task;
+import com.ItemPlus.Timer.Task.TimerRepeatTask;
 import com.ItemPlus.Timer.Task.TimerTask;
 import com.ItemPlus.Timer.TimerState;
 import static org.bukkit.Bukkit.getServer;
@@ -21,6 +22,11 @@ public final class TimerRunnable
     private final int taskID;
     private TimerState taskState;
 
+    /**
+     * 构造时间运行器
+     * @param plugin 插件
+     * @param timer 服务器计时器
+     */
     public TimerRunnable(final Plugin plugin, final ServerTimer timer)
     {
         this.taskState = TimerState.Suspending;
@@ -69,10 +75,16 @@ public final class TimerRunnable
                             }
 
                             task.run();
-
+                            
+                            
                             if (task instanceof TimerTask)
                             {
                                 task.remove();
+                            }
+                            else if(task instanceof TimerRepeatTask)
+                            {
+                                TimerRepeatTask repeatTask = (TimerRepeatTask) task;
+                                repeatTask.setTime(repeatTask.getDefaultTime());
                             }
                         }
                     }

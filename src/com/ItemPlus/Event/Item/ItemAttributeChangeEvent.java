@@ -14,6 +14,11 @@ public class ItemAttributeChangeEvent extends ItemEvent implements Cancellable
     private final Attribute attribute;
     private Boolean cancelled = false;
 
+    /**
+     * 构造物品属性变动事件
+     * @param item 物品
+     * @param attribute 属性 
+     */
     public ItemAttributeChangeEvent(ItemStack item, Attribute attribute)
     {
         super(item);

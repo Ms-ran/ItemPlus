@@ -15,6 +15,12 @@ public class PluginTaskTimeChangeEvent extends PluginEvent implements Cancellabl
     private final long time;
     private Boolean cancelled = false;
 
+    /**
+     * 构造执行器时间改变事件
+     * @param plugin 插件
+     * @param task 执行器
+     * @param time 时间
+     */
     public PluginTaskTimeChangeEvent(Plugin plugin, Task task, long time)
     {
         super(plugin);

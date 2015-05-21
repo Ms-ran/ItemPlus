@@ -13,6 +13,9 @@ public final class ServerTimer
     private final TimerRunnable task;
     private long time;
 
+    /**
+     * 构造服务器计时器
+     */
     public ServerTimer()
     {
         this.task = new TimerRunnable(Main.plugin, this);
@@ -32,7 +35,7 @@ public final class ServerTimer
     /**
      * 设置游戏时间
      *
-     * @param second
+     * @param second 秒
      */
     public void setTime(long second)
     {

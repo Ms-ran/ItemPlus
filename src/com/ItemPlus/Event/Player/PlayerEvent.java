@@ -14,6 +14,10 @@ public class PlayerEvent extends Event
     private static final HandlerList handlers = new HandlerList();
     private final Player player;
 
+    /**
+     * 构造玩家事件
+     * @param player 玩家
+     */
     public PlayerEvent(Player player)
     {
         this.player = player;

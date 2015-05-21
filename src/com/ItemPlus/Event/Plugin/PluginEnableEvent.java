@@ -12,6 +12,10 @@ public class PluginEnableEvent extends PluginEvent implements Cancellable
 {
     private Boolean cancelled = false;
 
+    /**
+     * 构造插件载入事件
+     * @param plugin 插件
+     */
     public PluginEnableEvent(Plugin plugin)
     {
         super(plugin);

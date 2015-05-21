@@ -24,7 +24,7 @@ public final class LoggerManager
     /**
      * 获取Logger
      *
-     * @param name
+     * @param name 名称
      * @return Logger
      */
     public Logger getLogger(String name)
@@ -35,8 +35,8 @@ public final class LoggerManager
     /**
      * 获取Logger
      *
-     * @param name
-     * @param resourceBundleName
+     * @param name 名称
+     * @param resourceBundleName 资源包名称
      * @return Logger
      */
     public Logger getLogger(String name, String resourceBundleName)

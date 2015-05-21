@@ -15,6 +15,13 @@ public class LifeSteal implements Attribute
     private int amount;
     private UUID uuid;
 
+    /**
+     * 构造吸血属性
+     * @param name 名字
+     * @param operation 操作方式
+     * @param amount 值
+     * @param uuid  uuid
+     */
     public LifeSteal(String name, int operation, int amount, UUID uuid)
     {
         this.name = name;

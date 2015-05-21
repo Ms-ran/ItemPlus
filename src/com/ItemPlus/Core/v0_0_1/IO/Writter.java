@@ -18,6 +18,10 @@ public final class Writter
 {
     private final File file;
 
+    /**
+     * 构造Writter
+     * @param file 文件 
+     */
     public Writter(File file)
     {
         this.file = file;

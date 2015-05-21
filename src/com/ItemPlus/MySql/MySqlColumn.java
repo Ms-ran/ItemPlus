@@ -9,6 +9,12 @@ public class MySqlColumn
 {
     public final String flag;
 
+    /**
+     * 构造MySql列
+     * @param type 类型
+     * @param rules 规则
+     * @param name  名称
+     */
     public MySqlColumn(String type, MySqlColumnRule[] rules, String name)
     {
         StringBuilder sb = new StringBuilder();

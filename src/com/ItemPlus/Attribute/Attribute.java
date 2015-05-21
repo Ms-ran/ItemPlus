@@ -20,14 +20,14 @@ public interface Attribute
     /**
      * 设置名字
      *
-     * @param name
+     * @param name 名字
      */
     public void setName(String name);
 
     /**
      * 获取类型
      *
-     * @return Attribute
+     * @return Attribute 属性
      */
     public Attribute getType();
 
@@ -48,7 +48,7 @@ public interface Attribute
     /**
      * 设置操作方式 增加数值(0)/乘以百分比(1)/增加百分比(2)
      *
-     * @param operation
+     * @param operation 操作方式
      */
     public void setOperation(int operation);
 
@@ -62,7 +62,7 @@ public interface Attribute
     /**
      * 设置数据
      *
-     * @param amount
+     * @param amount 数据
      */
     public void setAmount(Object amount);
 
@@ -76,7 +76,7 @@ public interface Attribute
     /**
      * 设置UUID
      *
-     * @param id
+     * @param id UUID
      */
     public void setUUID(@Nonnull UUID id);
 }

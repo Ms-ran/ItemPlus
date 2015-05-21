@@ -19,7 +19,7 @@ public interface Task
     /**
      * 设置时间
      *
-     * @param time
+     * @param time 时间
      */
     public void setTime(long time);
 

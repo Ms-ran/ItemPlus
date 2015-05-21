@@ -52,7 +52,7 @@ public class MySql
     /**
      * 设置数据库
      *
-     * @param schema
+     * @param schema 数据库
      * @throws java.sql.SQLException
      */
     public void setSchema(String schema) throws SQLException
@@ -90,7 +90,7 @@ public class MySql
     /**
      * 设置表格
      *
-     * @param table
+     * @param table 表
      * @throws java.sql.SQLException
      */
     public void setTable(String table) throws SQLException
@@ -177,7 +177,7 @@ public class MySql
     /**
      * 创建数据库
      *
-     * @param name
+     * @param name 数据库名称
      * @return Boolean
      * @throws SQLException
      */
@@ -190,8 +190,8 @@ public class MySql
     /**
      * 创建表格
      *
-     * @param table
-     * @param slots
+     * @param table 表名称
+     * @param slots 列
      * @return Boolean
      * @throws java.sql.SQLException
      */
@@ -224,7 +224,7 @@ public class MySql
     /**
      * 执行命令
      *
-     * @param statement
+     * @param statement 命令
      * @return ResultSet
      * @throws java.sql.SQLException
      */
@@ -242,7 +242,7 @@ public class MySql
     /**
      * 执行命令
      *
-     * @param statement
+     * @param statement 命令
      * @return Boolean
      * @throws java.sql.SQLException
      */
@@ -260,7 +260,7 @@ public class MySql
     /**
      * 执行命令
      *
-     * @param statement
+     * @param statement 命令
      * @return int
      * @throws SQLException
      */
@@ -278,7 +278,7 @@ public class MySql
     /**
      * 添加数据
      *
-     * @param map
+     * @param map 数据
      * @return Boolean
      * @throws SQLException
      */
@@ -318,9 +318,9 @@ public class MySql
     /**
      * 更新符合条件数据
      *
-     * @param condition
-     * @param key
-     * @param value
+     * @param condition 条件
+     * @param key 键
+     * @param value 值
      * @return int
      * @throws java.sql.SQLException
      */
@@ -341,8 +341,8 @@ public class MySql
     /**
      * 删除符合条件数据
      *
-     * @param key
-     * @param value
+     * @param key 条件键
+     * @param value 条件值
      * @return int
      * @throws SQLException
      */
@@ -363,8 +363,8 @@ public class MySql
     /**
      * 获取键中所有符合值
      *
-     * @param condition
-     * @param key
+     * @param condition 条件
+     * @param key 键
      * @return List<Object>
      * @throws SQLException
      */
@@ -394,8 +394,8 @@ public class MySql
     /**
      * 获取键中所有符合值
      *
-     * @param condition
-     * @param key
+     * @param condition 条件
+     * @param key 键
      * @return List<Integer>
      * @throws SQLException
      */
@@ -413,8 +413,8 @@ public class MySql
     /**
      * 获取键中所有符合值
      *
-     * @param condition
-     * @param key
+     * @param condition 条件
+     * @param key 键
      * @return List<String>
      * @throws SQLException
      */
@@ -432,7 +432,7 @@ public class MySql
     /**
      * 键是否存在
      *
-     * @param key
+     * @param key 键
      * @return Boolean
      * @throws java.sql.SQLException
      */
@@ -489,8 +489,8 @@ public class MySql
     /**
      * 键是否拥有值
      *
-     * @param key
-     * @param value
+     * @param key 键
+     * @param value 值
      * @return Boolean
      * @throws SQLException
      */
@@ -502,7 +502,7 @@ public class MySql
     /**
      * 获取键信息
      *
-     * @param key
+     * @param key 键
      * @return ResultSet
      */
     public synchronized ResultSet getKeyInfo(String key) throws SQLException

@@ -14,6 +14,11 @@ public class ItemEvent extends Event
     private static final HandlerList handlers = new HandlerList();
     private final ItemStack item;
 
+    /**
+     * 构造物品事件
+     *
+     * @param item 物品
+     */
     public ItemEvent(ItemStack item)
     {
         this.item = item;
