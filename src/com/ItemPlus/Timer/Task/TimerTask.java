@@ -1,57 +1,43 @@
 package com.ItemPlus.Timer.Task;
 
+import com.ItemPlus.Main;
+
 /**
  * @author HotFlow
  */
-public abstract class DelayTask
+public abstract class TimerTask implements Task
 {
     private long time;
     private final String description;
 
-    public DelayTask(long time)
+    public TimerTask(long time)
     {
-        this.time = time;
-        this.description = null;
+        this(time, null);
     }
 
-    public DelayTask(long time, String description)
+    public TimerTask(long time, String description)
     {
         this.time = time;
         this.description = description;
     }
 
-    /**
-     * 执行代码
-     */
-    public abstract void run();
-
-    /**
-     * 获取时间
-     *
-     * @return
-     */
     public long getTime()
     {
         return this.time;
     }
 
-    /**
-     * 设置时间
-     *
-     * @param time
-     */
     public void setTime(long time)
     {
         this.time = time;
     }
 
-    /**
-     * 获取介绍
-     *
-     * @return
-     */
     public String getDescription()
     {
         return this.description;
+    }
+
+    public void remove()
+    {
+        Main.getTaskManager().getTasks().remove(this);
     }
 }

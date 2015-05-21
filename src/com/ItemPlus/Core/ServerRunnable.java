@@ -1,11 +1,12 @@
 package com.ItemPlus.Core;
 
-import com.ItemPlus.Event.Plugin.PluginDelayTaskRunEvent;
-import com.ItemPlus.Event.Plugin.PluginDelayTaskTimeChangeEvent;
+import com.ItemPlus.Event.Plugin.PluginTaskFireEvent;
+import com.ItemPlus.Event.Plugin.PluginTaskTimeChangeEvent;
 import com.ItemPlus.Event.Plugin.PluginTimeChangeEvent;
 import com.ItemPlus.Main;
 import com.ItemPlus.Timer.ServerTimer;
-import com.ItemPlus.Timer.Task.DelayTask;
+import com.ItemPlus.Timer.Task.Task;
+import com.ItemPlus.Timer.Task.TimerTask;
 import com.ItemPlus.Timer.TaskState;
 import static org.bukkit.Bukkit.getServer;
 import org.bukkit.plugin.Plugin;
@@ -39,13 +40,13 @@ public final class ServerRunnable
 
                     timer.setTime(event.getTime());
 
-                    for (int i = 0; i < Main.getTaskManager().getDelayTaskManager().getTasks().size(); i++)
+                    for (int i = 0; i < Main.getTaskManager().getTasks().size(); i++)
                     {
-                        DelayTask task = Main.getTaskManager().getDelayTaskManager().getTasks().get(i);
+                        Task task = Main.getTaskManager().getTasks().get(i);
 
                         if (task.getTime() > 0)
                         {
-                            PluginDelayTaskTimeChangeEvent event1 = new PluginDelayTaskTimeChangeEvent(plugin, task, timer.getTime());
+                            PluginTaskTimeChangeEvent event1 = new PluginTaskTimeChangeEvent(plugin, task, timer.getTime());
                             getServer().getPluginManager().callEvent(event1);
 
                             if (event1.isCancelled())
@@ -57,7 +58,7 @@ public final class ServerRunnable
                         }
                         else
                         {
-                            PluginDelayTaskRunEvent event1 = new PluginDelayTaskRunEvent(plugin, task, timer.getTime());
+                            PluginTaskFireEvent event1 = new PluginTaskFireEvent(plugin, task, timer.getTime());
                             getServer().getPluginManager().callEvent(event1);
 
                             if (event1.isCancelled())
@@ -66,7 +67,11 @@ public final class ServerRunnable
                             }
 
                             task.run();
-                            Main.getTaskManager().getDelayTaskManager().getTasks().remove(task);
+
+                            if (task instanceof TimerTask)
+                            {
+                                task.remove();
+                            }
                         }
                     }
                 }

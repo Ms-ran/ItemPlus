@@ -1,19 +1,19 @@
 package com.ItemPlus.Event.Plugin;
 
-import com.ItemPlus.Timer.Task.DelayTask;
+import com.ItemPlus.Timer.Task.Task;
 import org.bukkit.event.Cancellable;
 import org.bukkit.plugin.Plugin;
 
 /**
  * @author HotFlow
  */
-public class PluginDelayTaskRunEvent extends PluginEvent implements Cancellable
+public class PluginTaskFireEvent extends PluginEvent implements Cancellable
 {
-    private final DelayTask task;
+    private final Task task;
     private final long time;
     private Boolean cancelled = false;
 
-    public PluginDelayTaskRunEvent(Plugin plugin, DelayTask task, long time)
+    public PluginTaskFireEvent(Plugin plugin, Task task, long time)
     {
         super(plugin);
         this.task = task;
@@ -25,7 +25,7 @@ public class PluginDelayTaskRunEvent extends PluginEvent implements Cancellable
      *
      * @return
      */
-    public DelayTask getTask()
+    public Task getTask()
     {
         return this.task;
     }
