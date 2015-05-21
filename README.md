@@ -1,6 +1,7 @@
 # ItemPlus
 物品加强插件
 
-This plugin is use for item escalate and customizer.
-###Resource
+本插件用于服务器物品可玩性加强，兼容各版本服务端。
+
+###开发者资源
 * [JavaDoc](http://tribeserver.github.io/ItemPlus)
