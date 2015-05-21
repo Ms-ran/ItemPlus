@@ -1,0 +1,26 @@
+name: ItemPlus
+version: 0.0.1
+description: This plugin is use for item escalate and customizer.
+authors: [HotFlow]
+main: com.ItemPlus.Main
+depend: [ProtocolLib]
+commands:
+  ItemPlus:
+    description: Display all of the plugin commands.
+    aliases: [ip,item]
+    permission: itemplus.admin.command
+    permission-message: You dont have permission to perform this command.
+permissions:
+  itemplus.admin.*:
+    description: Gives access to all of the admin commands.
+    children:
+      itemplus.admin.command: true
+      itemplus.admin.command.name: true
+  itemplus.user.*:
+    description: Gives access to all of the user actions.
+  itemplus.admin.command:
+      description: Allows player to perform the commands.
+      default: op
+  itemplus.admin.command.name:
+      description: Allows player to change the name of an item.
+      default: op
