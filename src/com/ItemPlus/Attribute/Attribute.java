@@ -27,7 +27,7 @@ public interface Attribute
     /**
      * 获取类型
      *
-     * @return Attribute 属性
+     * @return Attribute
      */
     public Attribute getType();
 
